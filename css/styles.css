@@ -460,17 +460,25 @@ p.text-gray-500 {
     right: 10px;
 }
 
+/* Gouden medaille (Certified Award) kleiner en lager */
+.award-item img[alt="Certified Award"] {
+    width: 4rem !important;
+    height: 4rem !important;
+    position: relative;
+    top: 20px;
+}
+
 /* Better signature positioning */
 .signature-section {
     position: relative;
     bottom: 0px;
-    right: 45px;
+    right: 65px;
 }
 
 /* Move handtekening image down slightly */
 .signature-section img[alt="Handtekening"] {
     position: relative;
-    top: 10px;
+    top: 35px;
     filter: contrast(1.1) brightness(0.95);
 }
 
@@ -685,10 +693,12 @@ p.text-gray-500 {
 
     .award-item:nth-child(2) img[alt="Certified Award"],
     .award-item.-ml-12 img[alt="Certified Award"],
-    .award-item.mt-2 img[alt="Certified Award"] {
+    .award-item.mt-2 img[alt="Certified Award"],
+    .award-item img[alt="Certified Award"] {
         transform: scale(1) !important;
-        max-width: 80px !important;
-        max-height: 80px !important;
+        max-width: 60px !important;
+        max-height: 60px !important;
+        top: 20px !important;
     }
 
     .award-item.-ml-12 {
@@ -698,7 +708,7 @@ p.text-gray-500 {
 
     .signature-section img[alt="Handtekening"] {
         position: relative !important;
-        top: 0 !important;
+        top: 35px !important;
         max-width: 100px !important;
         height: auto !important;
         margin: 0 !important;
