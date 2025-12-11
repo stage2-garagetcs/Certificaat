@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay - Chiptuning Data</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0mm;
+        }
+
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 297mm;
+            height: 210mm;
+            position: relative;
+            background: transparent;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Import Furore font */
+        @font-face {
+            font-family: 'Furore';
+            src: url('media/fonts/Furore.otf') format('opentype');
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 297mm;
+            height: 210mm;
+        }
+
+        /* Chiptuning title */
+        .chiptuning-title {
+            position: absolute;
+            top: 84mm;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Furore', serif;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+        }
+
+        /* Stage title */
+        .stage-title {
+            position: absolute;
+            top: 102mm;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Furore', serif;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+        }
+
+        /* Power specs */
+        .power-specs {
+            position: absolute;
+            top: 120mm;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+        }
+
+        .power-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 130px;
+            margin-bottom: 50px;
+            font-size: 22px;
+        }
+
+        .power-value {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .power-unit {
+            color: #6b7280;
+        }
+
+        .arrow {
+            font-size: 28px;
+            color: #000;
+        }
+
+        .power-increase {
+            position: absolute;
+            top: 160mm;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Datum */
+        .datum {
+            position: absolute;
+            bottom: 85px;
+            right: 160px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Auto gegevens */
+        .auto-gegevens {
+            position: absolute;
+            bottom: 150px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            font-size: 0.85rem;
+            color: #4b5563;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .auto-veld {
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            top: 55px;
+            padding: 0 15px;
+            white-space: nowrap;
+        }
+
+        /* Voeg automatisch | toe tussen velden */
+        .auto-veld:not(:last-child)::after {
+            content: '|';
+            position: absolute;
+            right: -3px;
+            color: #4b5563;
+        }
+
+        /* Screen view helpers */
+        @media screen {
+            body {
+                background: #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .overlay-container {
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <!-- Stage title -->
+        <div class="stage-title">[STAGE_TYPE]</div>
+
+        <!-- Power specifications -->
+        <div class="power-specs">
+            <!-- PK row -->
+            <div class="power-row">
+                <div><span class="power-value">[HP_ORIGINAL]</span> <span class="power-unit">pk</span></div>
+                <div><span class="power-value">[HP_TUNED]</span> <span class="power-unit">pk</span></div>
+            </div>
+
+            <!-- Nm row -->
+            <div class="power-row">
+                <div><span class="power-value">[NM_ORIGINAL]</span> <span class="power-unit">Nm</span></div>
+                <div><span class="power-value">[NM_TUNED]</span> <span class="power-unit">Nm</span></div>
+            </div>
+        </div>
+
+        <!-- Power increase -->
+        <div class="power-increase">
+            <div>+[HP_INCREASE] pk</div>
+            <div>+[NM_INCREASE] Nm</div>
+        </div>
+
+        <!-- Datum -->
+        <div class="datum">[DATE]</div>
+
+        <!-- Auto gegevens -->
+        <div class="auto-gegevens">
+            <span class="auto-veld">[LICENSE_PLATE]</span>
+            <span class="auto-veld">[CAR_BRAND]</span>
+            <span class="auto-veld">[REGISTRATION_DATE]</span>
+            <span class="auto-veld">[ENGINE_CC]cc</span>
+        </div>
+    </div>
+</body>
+</html>

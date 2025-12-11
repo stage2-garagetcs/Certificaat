@@ -1,0 +1,485 @@
+/* Exact match fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Times:wght@400;700&display=swap');
+
+/* Custom font Furore */
+@font-face {
+    font-family: 'Furore';
+    src: url('../media/fonts/Furore.otf') format('opentype');
+}
+
+/* Certificate paper styling */
+.certificate-paper {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    /* box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.1); */
+}
+
+/* 3D logo effect */
+.logo-3d {
+    background: linear-gradient(135deg, #6b7280, #9ca3af, #d1d5db);
+    transform: perspective(100px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Signature styling - handgeschreven look */
+.signature-style {
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+    transform: rotate(-2deg);
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Main title styling - Furore font */
+.main-title {
+    font-family: 'Furore', 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+/* Product title styling - Furore font */
+.product-title {
+    font-family: 'Furore', 'Times New Roman', Times, serif;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Decorative line under product title */
+.product-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    height: 2px;
+    background-color: #333;
+}
+
+/* Decorative lines for vehicle info */
+.vehicle-divider-top {
+    border-top: 1px solid #333;
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+}
+
+.vehicle-divider-bottom {
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+/* Separate line elements */
+.top-line {
+    border-top: 1px solid #333;
+    width: 400px;
+    margin: 2rem auto 0.75rem auto;
+    position: relative;
+    bottom: 175px;
+}
+
+.bottom-line {
+    border-bottom: 1px solid #333;
+    width: 800px;
+    margin: 0.75rem auto 1rem auto;
+    position: relative;
+    bottom: 205px;
+}
+
+/* Body background */
+body {
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Certificate container */
+.certificate-container {
+    width: 100%;
+    max-width: 64rem;
+    background-color: white;
+    padding: 3rem;
+    position: relative;
+}
+
+/* Chrome border decoration */
+.chrome-border {
+    border: 30px solid;
+    border-image: linear-gradient(45deg,
+        #c0c0c0,
+        #e8e8e8,
+        #f0f0f0,
+        #d0d0d0,
+        #a0a0a0,
+        #c0c0c0
+    ) 1;
+    box-shadow:
+        inset 0 0 8px rgba(0,0,0,0.1),
+        0 0 16px rgba(0,0,0,0.2);
+}
+
+/* Border decoration */
+.certificate-border {
+    position: absolute;
+    inset: 0.05rem;
+    pointer-events: none;
+}
+
+
+/* Header section */
+.header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Logo container */
+.logo-container {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-inner {
+    width: 3rem;
+    height: 3rem;
+    border: 4px solid white;
+    border-radius: 0.25rem;
+    transform: rotate(45deg);
+}
+
+/* Main title */
+.certificate-title {
+    font-size: 3.75rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 1.125rem;
+    color: #374151;
+    font-weight: 500;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Content section */
+.content-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Product name */
+.product-name {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+/* Specifications */
+.specifications {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.specification-item {
+    font-size: 1.125rem;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+/* Bottom section */
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 4rem;
+}
+
+/* Awards section */
+.awards-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.award-item {
+    text-align: center;
+}
+
+
+/* Signature section */
+.signature-section {
+    text-align: right;
+}
+
+.signature-text {
+    font-size: 1.875rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.date-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Vehicle info */
+.vehicle-info {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #d1d5db;
+    position: relative;
+    bottom: 200px;
+}
+
+.vehicle-text {
+    font-size: 0.875rem;
+    color: #4b5563;
+    position: relative;
+    bottom: 200px;
+}
+
+/* Footer */
+.footer-section {
+    text-align: center;
+    margin-top: 1.5rem;
+    position: relative;
+    bottom: 290px;
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* Move vehicle and footer text up */
+p.text-gray-600.font-medium {
+    position: relative !important;
+    bottom: 190px !important;
+    font-size: 0.875rem !important;
+}
+
+p.text-gray-500 {
+    position: relative !important;
+    bottom: 245px !important;
+    font-size: 0.85rem !important;
+}
+
+/* Awards styling improvements */
+.award-badges {
+    position: relative;
+    bottom: 50px;
+    left: 20px;
+    transform: scale(0.8);
+}
+
+.award-item {
+    transform: scale(1);
+}
+
+/* Fix de witte container kleur en badge afmetingen */
+.award-item div {
+    background: transparent !important;
+}
+
+.award-item img {
+    width: 5rem !important;
+    height: 5rem !important;
+    object-fit: contain !important;
+}
+
+/* Make garantie badge longer to match certified badge */
+.award-item img[alt="Garantie Award"] {
+    width: 5.2rem !important;
+    height: 5.2rem !important;
+    position: relative;
+    top: 8px;
+}
+
+/* Make EU Certified badge smaller */
+.award-item img[alt="EU Certified Award"] {
+    width: 3.6rem !important;
+    height: 3.6rem !important;
+    position: relative;
+    right: 10px;
+}
+
+/* Better signature positioning */
+.signature-section {
+    position: relative;
+    bottom: 60px;
+    right: 80px;
+    transform: scale(0.85);
+}
+
+/* Move handtekening image down slightly */
+.signature-section img[alt="Handtekening"] {
+    position: relative;
+    top: 10px;
+}
+
+/* Print-specific adjustments for Brother thuisprinter - A4 zonder bleed */
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 0mm;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    html {
+        margin: 0mm !important;
+        padding: 0mm !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+    }
+
+    body {
+        margin: 0mm !important;
+        padding: 0mm !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+    }
+
+    body * {
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+        page-break-before: avoid !important;
+    }
+
+    .certificate-paper {
+        position: relative !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        margin: 0 !important;
+        padding: 8mm 10mm !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+        box-sizing: border-box !important;
+    }
+
+    .certificate-border {
+        position: absolute !important;
+        top: 6mm !important;
+        left: 6mm !important;
+        right: 6mm !important;
+        bottom: 6mm !important;
+        width: calc(297mm - 12mm) !important;
+        height: calc(210mm - 12mm) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .chrome-border {
+        border-width: 25px !important;
+        box-shadow: inset 0 0 8px rgba(0,0,0,0.1) !important;
+    }
+
+    .award-badges {
+        bottom: 10px !important;
+        transform: scale(1) !important;
+    }
+
+    .signature-section {
+        position: relative !important;
+        bottom: 10px !important;
+        right: 45px !important;
+    }
+
+    .signature-section img[alt="Handtekening"] {
+        position: relative !important;
+        top: 30px !important;
+    }
+
+    /* Watermark text positioning - more distance from content */
+    .absolute.left-2 {
+        left: -2rem !important;
+    }
+
+    .absolute.right-2 {
+        right: -2rem !important;
+    }
+
+    /* Move vehicle and footer in print view */
+    p.text-gray-600.font-medium {
+        position: fixed !important;
+        bottom: 60px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 0.85rem !important;
+        margin: 0 !important;
+    }
+
+    p.text-gray-500 {
+        position: fixed !important;
+        bottom: 38px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 0.75rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .top-line {
+        position: fixed !important;
+        bottom: 90px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .bottom-line {
+        position: fixed !important;
+        bottom: 50px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .certificate-paper {
+        padding: 2rem;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .product-title {
+        font-size: 1.875rem;
+    }
+
+    .flex.justify-between {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .signature-section {
+        text-align: center;
+    }
+}

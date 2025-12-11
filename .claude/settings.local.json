@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(move:*)",
+      "Bash(move fonts media )",
+      "Bash(move img media)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(node generate_html.js)",
+      "Bash(node generate_auto.js:*)",
+      "Bash(start certificaat_.html)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

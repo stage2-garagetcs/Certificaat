@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Dubbel Print - PPF Certificaat</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0mm;
+        }
+
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+            width: 297mm;
+            height: 210mm;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 297mm;
+            height: 210mm;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .overlay-frame {
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .base-frame {
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <!-- Base certificaat (onderste laag) -->
+            <iframe src="generated_html/certificaat_.html" class="base-frame"></iframe>
+
+            <!-- Overlay met data (bovenste laag) -->
+            <iframe src="overlay-ppf.html" class="overlay-frame"></iframe>
+        </div>
+    </div>
+</body>
+</html>

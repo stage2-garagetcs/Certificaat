@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay - Gordels Data</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0mm;
+        }
+
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 297mm;
+            height: 210mm;
+            position: relative;
+            background: transparent;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Import Furore font */
+        @font-face {
+            font-family: 'Furore';
+            src: url('media/fonts/Furore.otf') format('opentype');
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 297mm;
+            height: 210mm;
+        }
+
+        /* Subtitle tekst - onder de titel */
+        .subtitle-text {
+            position: absolute;
+            top: 74mm;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            font-weight: 500;
+            font-style: italic;
+            text-align: center;
+            color: #374151;
+            max-width: 600px;
+            white-space: nowrap;
+        }
+
+        /* Dienst naam - precies zoals in certificaat */
+        .dienst-naam {
+            position: absolute;
+            top: 90mm;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Furore', serif;
+            font-size: 34px;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+            white-space: nowrap;
+        }
+
+        /* Dienst specificaties - exact posities uit CSS */
+        .dienst-spec {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            text-align: center;
+            color: #1f2937;
+            width: 700px;
+        }
+
+        .dienst-spec1 {
+            top: 109mm;
+        }
+
+        .dienst-spec2 {
+            top: 117mm;
+        }
+
+        .dienst-spec3 {
+            top: 127mm;
+        }
+
+        .dienst-spec4 {
+            top: 137mm;
+        }
+
+        /* Wit blok om 4e lege dienst regel te verbergen */
+        .hide-empty-line {
+            position: absolute;
+            top: 137mm;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 15mm;
+            background: #f8f9fa;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+
+        /* Decoratieve lijn - op witte box */
+        .dienst-underline {
+            position: absolute;
+            top: 1n50mm;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 380px;
+            height: 1px;
+            background: #333;
+        }
+
+        /* Verberg originele lijn van certificaat_.html */
+        .hide-original-line {
+            position: absolute;
+            top: 150mm;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 10mm;
+            background: #f8f9fa;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+
+        /* 1-jaars garantie badge */
+        .garantie-badge-1jaar {
+            position: absolute;
+            left: 170px;
+            bottom: 71px;
+            width: 50px;
+            height: 75px;
+        }
+
+        /* Extra badge voor gordels - 3 badges totaal */
+        .badge-extra {
+            position: absolute;
+            bottom: 72px;
+            left: 270px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .badge-extra img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Datum - op dezelfde lijn als autogegevens */
+        .datum {
+            position: absolute;
+            bottom: 72px;
+            right: 160px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Auto gegevens - EXACT zoals certificaat_.html */
+        .auto-gegevens {
+            position: absolute;
+            bottom: 130px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            font-size: 0.85rem;
+            color: #4b5563;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .auto-veld {
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            top: 55px;
+            padding: 0 15px;
+            white-space: nowrap;
+        }
+
+        /* Voeg automatisch | toe tussen velden */
+        .auto-veld:not(:last-child)::after {
+            content: '|';
+            position: absolute;
+            right: -3px;
+            color: #4b5563;
+        }
+
+        /* Screen view helpers */
+        @media screen {
+            body {
+                background: #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .overlay-container {
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <!-- Subtitle tekst -->
+        <div class="subtitle-text">Dit certificaat bevestigt dat de autogordels vakkundig zijn gemonteerd.</div>
+
+        <!-- Dienst naam -->
+        <div class="dienst-naam">Premium Custom Autogordels</div>
+
+        <!-- Dienst specificaties -->
+        <div class="dienst-spec dienst-spec1">[NUMBER_OF_SEATBELTS] custom autogordels</div>
+        <div class="dienst-spec dienst-spec2">Europees gecertificeerd</div>
+        <div class="dienst-spec dienst-spec3">1 jaar garantie op gordels en montage</div>
+        <div class="dienst-spec dienst-spec4">Voldoet aan ECE R16 veiligheidsnormen</div>
+
+
+        <!-- 1-jaars garantie badge -->
+        <img src="media/img/garantienieuw2.png" alt="1 Jaar Garantie" class="garantie-badge-1jaar">
+
+        <!-- Extra badge (3e badge voor gordels - EU Certified) -->
+        <div class="badge-extra">
+            <img src="media/img/certifiedeu1.png" alt="EU Certified Badge">
+        </div>
+
+        <!-- Datum -->
+        <div class="datum">[DATE]</div>
+
+        <!-- Auto gegevens -->
+        <div class="auto-gegevens">
+            <span class="auto-veld">[LICENSE_PLATE]</span>
+            <span class="auto-veld">[CAR_BRAND]</span>
+            <span class="auto-veld">[YEAR]</span>
+            <span class="auto-veld">[ENGINE_CC]cc</span>
+        </div>
+    </div>
+</body>
+</html>
